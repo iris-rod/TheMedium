@@ -53,11 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ScreenManager.cs" />
-     <Compile Include="Assets\Simple Scene Fade Load System\Demo (You don&apos;t have to import this folder)\DemoScript.cs" />
-     <Compile Include="Assets\Simple Scene Fade Load System\Fader.cs" />
-     <Compile Include="Assets\Simple Scene Fade Load System\Initiate.cs" />
-     <None Include="Assets\Simple Scene Fade Load System\ReadMeFirst.txt" />
+     <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
+     <Compile Include="Assets\Resources\Scripts\InventoryManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\ItemDragAndDropHandler.cs" />
+     <Compile Include="Assets\Resources\Scripts\ItemManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Pickable.cs" />
+     <Compile Include="Assets\Resources\Scripts\ScreenManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Slot.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/gabri/Documents/Temp Projects/NotAGameStudio/TheMedium/Medium/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
