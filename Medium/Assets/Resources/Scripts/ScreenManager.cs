@@ -18,6 +18,9 @@ public class ScreenManager : MonoBehaviour
   //Currently Open Screen
   private Animator currentOpen;
 
+  //Next Screen to open when the character reaches the edge
+  private Animator nextOpen;
+
   //Hash of the parameter we use to control the transitions.
   private int OpenParameterId;
 
@@ -38,55 +41,66 @@ public class ScreenManager : MonoBehaviour
     //If set, open the initial Screen now.
     if (initiallyOpen == null)
       return;
-    OpenPanel(initiallyOpen);
+    nextOpen = initiallyOpen;
+    OpenPanel();
+  }
+
+  public void SetNextPanel(Animator anim)
+  {
+    nextOpen = anim;
   }
 
   //Closes the currently open panel and opens the provided one.
   //It also takes care of handling the navigation, setting the new Selected element.
-  public void OpenPanel(Animator anim)
+  public void OpenPanel()
   {
-    if (currentOpen == anim)
-      return;
-
-    FadeOut();
-    //Activate the new Screen hierarchy so we can animate it.
-    anim.gameObject.SetActive(true);
-    //Save the currently selected button that was used to open this Screen. (CloseCurrent will modify it)
-    if (EventSystem.current != null)
+    if (nextOpen != null)
     {
-      var newPreviouslySelected = EventSystem.current.currentSelectedGameObject;
-      PreviouslySelected = newPreviouslySelected;
-    }
-    //Move the Screen to front.
-    anim.transform.SetAsLastSibling();
+      if (currentOpen == nextOpen)
+        return;
 
-    receivedAnim = anim;
-    
-    //If it is the begining of the game, open the initial scene
-    if(currentOpen == null)
-    {
-      currentOpen = anim;
-      //Start the open animation
-      currentOpen.SetBool(OpenParameterId, true);
-      Invoke("FadeIn", 2.5f);
-    }
-    //If it isnt the begining of the game, wait for a while for the fade out to be complete before closing and opening the scenes
-    else
-      Invoke("MoveScenes",1f);
+      FadeOut();
+      //Activate the new Screen hierarchy so we can animate it.
+      nextOpen.gameObject.SetActive(true);
+      //Save the currently selected button that was used to open this Screen. (CloseCurrent will modify it)
+      if (EventSystem.current != null)
+      {
+        var newPreviouslySelected = EventSystem.current.currentSelectedGameObject;
+        PreviouslySelected = newPreviouslySelected;
+      }
+      //Move the Screen to front.
+      nextOpen.transform.SetAsLastSibling();
 
-    //Set an element in the new screen as the new Selected one.
-    GameObject go = FindFirstEnabledSelectable(anim.gameObject);
-    SetSelected(go);
+      receivedAnim = nextOpen;
+
+      //If it is the begining of the game, open the initial scene
+      if (currentOpen == null)
+      {
+        currentOpen = nextOpen;
+        //Start the open animation
+        currentOpen.SetBool(OpenParameterId, true);
+        Invoke("FadeIn", 2.5f);
+      }
+      //If it isnt the begining of the game, wait for a while for the fade out to be complete before closing and opening the scenes
+      else
+        Invoke("MoveScenes", 1f);
+
+      GetComponent<ItemManager>().SetCurrentScene(currentOpen.gameObject);
+      //Set an element in the new screen as the new Selected one.
+      GameObject go = FindFirstEnabledSelectable(nextOpen.gameObject);
+      SetSelected(go);
+      nextOpen = null;
+    }
   }
 
   private void MoveScenes()
   {
-    //Invoke("CloseCurrent", .5f);
     CloseCurrent();
     //Set the new Screen as then open one.
     currentOpen = receivedAnim;
     //Start the open animation
     currentOpen.SetBool(OpenParameterId, true);
+
     Invoke("FadeIn", 2.5f);
   }
 
@@ -160,13 +174,13 @@ public class ScreenManager : MonoBehaviour
   private void FadeIn()
   {
     fadeAnim.SetBool("Fade", true);
-
+    GetComponent<CharactersManager>().FadeIn();
   }
 
   private void FadeOut()
   {
     fadeAnim.SetBool("Fade", false);
-
+    GetComponent<CharactersManager>().FadeOut();
   }
 
 }

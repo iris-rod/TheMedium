@@ -53,11 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
+     <Compile Include="Assets\Resources\Scripts\CharactersManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\GhostController.cs" />
      <Compile Include="Assets\Resources\Scripts\InventoryManager.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemDragAndDropHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Pickable.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Resources\Scripts\ScreenManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Slot.cs" />
  <Reference Include="UnityEditor.StandardEvents">

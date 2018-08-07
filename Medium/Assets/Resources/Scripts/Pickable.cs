@@ -8,6 +8,23 @@ public class Pickable : MonoBehaviour {
   public int Quantity;
   public Sprite InventoryIcon;
 
+  private bool canBePicked = false;
 
+  public void Setup(string name, int value, Sprite icon)
+  {
+    Name = name;
+    Quantity = value;
+    InventoryIcon = icon;
+  }
+
+  public void Clicked()
+  {
+    canBePicked = true;
+  }
+
+  public bool CanBePicked()
+  {
+    return canBePicked;
+  }
 
 }

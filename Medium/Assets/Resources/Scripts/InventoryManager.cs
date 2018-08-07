@@ -9,11 +9,17 @@ public class InventoryManager : MonoBehaviour {
   private Dictionary<string, int> items;
   private int maxSlots,nextOpenSlot;
 
+  private bool canAddNewItem;
+  private string itemClicked;
+  private ItemManager ItManager;
+
 	// Use this for initialization
 	void Awake () {
+    ItManager = GameObject.Find("Manager").GetComponent<ItemManager>();
     items = new Dictionary<string,int>();
     maxSlots = transform.GetChild(0).transform.childCount;
     nextOpenSlot = 0;
+    canAddNewItem = false;
   }
 
   // Update is called once per frame
@@ -21,22 +27,32 @@ public class InventoryManager : MonoBehaviour {
   {
   }
 
+  public void CanAdd(Pickable item)
+  {
+    itemClicked = item.Name;
+    canAddNewItem = true;
+  }
+
   public void AddItem(Pickable item)
   {
-    string sleekName = item.Name.Split('(')[0].Trim();
-    if (items.Count < maxSlots)
+    if (canAddNewItem && item.Name == itemClicked)
     {
-      if (HasItem(sleekName))
+      string sleekName = item.Name.Split('(')[0].Trim();
+      if (items.Count < maxSlots)
       {
-        items[sleekName] += item.Quantity;
-        UpdateItemOnSlot(sleekName, item.Quantity);
+        if (HasItem(sleekName))
+        {
+          items[sleekName] += item.Quantity;
+          UpdateItemOnSlot(sleekName, item.Quantity);
+        }
+        else
+        {
+          items.Add(sleekName, item.Quantity);
+          AddItemToSlot(sleekName, item.Quantity, item.InventoryIcon);
+          CheckNextOpenSlot();
+        }
       }
-      else
-      {
-        items.Add(sleekName, item.Quantity);
-        AddItemToSlot(sleekName, item.Quantity, item.InventoryIcon);
-        CheckNextOpenSlot();
-      }
+      canAddNewItem = false;
     }
   }
 
@@ -72,7 +88,6 @@ public class InventoryManager : MonoBehaviour {
     Transform spots = transform.GetChild(0);
     Transform spot = spots.GetChild(nextOpenSlot);
     spot.GetComponent<Slot>().AddItem(name, quantity, icon);
-
   }
 
   private void UpdateItemOnSlot(string name, int quantity)

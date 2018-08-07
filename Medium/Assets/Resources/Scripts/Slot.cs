@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour {
 
   void Awake()
   {
-    defaultIcon = Resources.Load("Textures/default_icon", typeof(Sprite)) as Sprite;
+    defaultIcon = Resources.Load("Sprites/default_icon", typeof(Sprite)) as Sprite;
     quantityText = transform.GetChild(0).GetComponent<Text>();
     itemName = "";
     itemQuantity = 0;
@@ -54,4 +54,10 @@ public class Slot : MonoBehaviour {
   {
     return itemName;
   }
+
+  public Sprite GetIcon()
+  {
+    return GetComponent<Image>().sprite;
+  }
+
 }
