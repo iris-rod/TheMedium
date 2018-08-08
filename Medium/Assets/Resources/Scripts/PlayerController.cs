@@ -76,23 +76,12 @@ public class PlayerController : MonoBehaviour {
 
   void OnCollisionStay2D(Collision2D col)
   {
-    if(col.transform.name == "Ghost")
+    if (col.transform.CompareTag("Button"))
     {
-      moving = false;
-      transform.position = Vector2.MoveTowards(transform.position, col.transform.position, -1 * 10 * Time.deltaTime);
-      animator.SetBool("Move", false);
-    }
-    else if (col.transform.CompareTag("Button"))
-    {
-      moving = false;
-      animator.SetBool("Move", false);
       SM.OpenPanel();
     }
     else if (col.transform.CompareTag("Pickable"))
     {
-      moving = false;
-      animator.SetBool("Move", false);
-      transform.position = Vector2.MoveTowards(transform.position, col.transform.position, -1 * 10 * Time.deltaTime);
       if (canPickup && col.transform.GetComponent<Pickable>().CanBePicked())
       {
         itemToPick = col.gameObject;
@@ -101,6 +90,16 @@ public class PlayerController : MonoBehaviour {
         canPickup = false;
       }
     }
+    else if (col.transform.CompareTag("Interactable"))
+    {
+      if (col.transform.GetComponent<Interactable>().CanInteract())
+      {
+        col.transform.GetComponent<Interactable>().StartInteraction();
+      }
+    }
+    moving = false;
+    transform.position = Vector2.MoveTowards(transform.position, col.transform.position, -1 * 10 * Time.deltaTime);
+    animator.SetBool("Move", false);
   }
 
   void Pickup()

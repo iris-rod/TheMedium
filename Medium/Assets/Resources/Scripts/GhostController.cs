@@ -19,7 +19,7 @@ public class GhostController : MonoBehaviour {
     ItM = GameObject.Find("Manager").GetComponent<ItemManager>();
     give = false;
     canGive = true;
-    ItM.CreateItem(Item);
+    ItM.CreateItem(Item, transform.parent.gameObject);
   }
 	
   void Update()

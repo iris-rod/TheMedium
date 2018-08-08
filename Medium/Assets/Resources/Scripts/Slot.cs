@@ -39,8 +39,8 @@ public class Slot : MonoBehaviour {
   {
     itemName = "";
     itemQuantity = 0;
-    quantityText.text = "";
-    GetComponent<Image>().sprite = defaultIcon;
+    quantityText.text = "0";
+    GetComponent<Image>().sprite = null;
     hasItem = false;
   }
   

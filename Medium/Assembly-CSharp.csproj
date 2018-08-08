@@ -53,9 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Scripts\ChangeSceneHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\CharactersManager.cs" />
      <Compile Include="Assets\Resources\Scripts\GhostController.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactable.cs" />
      <Compile Include="Assets\Resources\Scripts\InventoryManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\ItemClickHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemDragAndDropHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Pickable.cs" />

@@ -8,6 +8,7 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
 
   private Vector3 initialPos, screenPoint, offset;
   private bool begin = true;
+  private bool dragging = false;
   private ItemManager ItManager;
 
   void Start()
@@ -19,6 +20,7 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
   {
     if (!GetComponent<Slot>().IsFree())
     {
+      dragging = true;
       if (begin)
       {
         initialPos = transform.position;
@@ -37,6 +39,7 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
     {
       transform.position = initialPos;
       begin = true;
+      dragging = false;
     }
   }
 
@@ -47,15 +50,21 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
     if (!RectTransformUtility.RectangleContainsScreenPoint(inventory, Input.mousePosition))
     {
       name = GetComponent<Slot>().GetItemName();
-      transform.parent.parent.GetComponent<InventoryManager>().RemoveItem(name);
+      transform.parent.parent.parent.GetComponent<InventoryManager>().RemoveItem(name);
     }
     transform.position = initialPos;
 
-    ItManager.CreateItem(name);
+    ItManager.CreateItem(name, null);
     var v3 = Input.mousePosition;
     v3.z = 10.0f;
     v3 = Camera.main.ScreenToWorldPoint(v3);
     ItManager.GiveItem(name,v3);
 
   }
+
+  public bool IsDragging()
+  {
+    return dragging;
+  }
+
 }

@@ -21,12 +21,8 @@ public class InventoryManager : MonoBehaviour {
     nextOpenSlot = 0;
     canAddNewItem = false;
   }
-
-  // Update is called once per frame
-  void Update()
-  {
-  }
-
+  
+  //Used onclick funtion of items to be able to pick them up when the player gets close enough
   public void CanAdd(Pickable item)
   {
     itemClicked = item.Name;
@@ -63,7 +59,7 @@ public class InventoryManager : MonoBehaviour {
     Transform spots = transform.GetChild(0);
     for (int i = 0; i < spots.childCount; i++)
     {
-      Transform spot = spots.GetChild(i);
+      Transform spot = spots.GetChild(i).GetChild(0);
       if (spot.GetComponent<Slot>().GetItemName().Trim().ToLower() == sleekName.Trim().ToLower())
       {
         spot.GetComponent<Slot>().RemoveItem();
@@ -71,6 +67,34 @@ public class InventoryManager : MonoBehaviour {
       }
     }
     CheckNextOpenSlot();
+  }
+
+  //check if the item exists in the inventory and it is selected
+  public bool CheckForItem(string name)
+  {
+    string sleekName = name.Split('(')[0].Trim();
+    Transform spots = transform.GetChild(0);
+    for (int i = 0; i < spots.childCount; i++)
+    {
+      Transform spot = spots.GetChild(i).GetChild(0);
+      if (spot.GetComponent<Slot>().GetItemName().Trim().ToLower() == sleekName.Trim().ToLower() && spot.GetComponent<ItemClickHandler>().IsSelected())
+        return true;
+    }
+    return false;
+  }
+
+  //check if there is any item already selected in the inventory
+  public bool HasItemAlreadySelected()
+  {
+    Transform spots = transform.GetChild(0);
+    for (int i = 0; i < spots.childCount; i++)
+    {
+      Transform spot = spots.GetChild(i).GetChild(0);
+      if (spot.GetComponent<ItemClickHandler>().IsSelected())
+        return true;
+
+    }
+    return false;
   }
 
   private bool HasItem(string name)
@@ -86,7 +110,7 @@ public class InventoryManager : MonoBehaviour {
   private void AddItemToSlot(string name, int quantity, Sprite icon)
   {
     Transform spots = transform.GetChild(0);
-    Transform spot = spots.GetChild(nextOpenSlot);
+    Transform spot = spots.GetChild(nextOpenSlot).GetChild(0);
     spot.GetComponent<Slot>().AddItem(name, quantity, icon);
   }
 
@@ -95,7 +119,7 @@ public class InventoryManager : MonoBehaviour {
     Transform spots = transform.GetChild(0);
     for (int i = 0; i < spots.childCount; i++)
     {
-      Transform spot = spots.GetChild(i);
+      Transform spot = spots.GetChild(i).GetChild(0);
       if (spot.GetComponent<Slot>().GetItemName() == name)
       {
         spot.GetComponent<Slot>().UpdateItem(quantity);
@@ -109,7 +133,7 @@ public class InventoryManager : MonoBehaviour {
     Transform spots = transform.GetChild(0);
     for (int i = 0; i < spots.childCount; i++)
     {
-      Transform spot = spots.GetChild(i);
+      Transform spot = spots.GetChild(i).GetChild(0);
       if (spot.GetComponent<Slot>().IsFree())
       {
         nextOpenSlot = i;

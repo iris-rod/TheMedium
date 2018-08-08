@@ -17,7 +17,9 @@ public class CharactersManager : MonoBehaviour {
   {
     if (player != null)
     {
+      GetComponent<ChangeSceneHandler>().ChangeScene();
       player.GetComponent<SpriteRenderer>().sortingOrder = 1;
+      
       for (int i = 0; i < npcs.Length; i++)
         npcs[i].GetComponent<SpriteRenderer>().sortingOrder = 1;
     }
