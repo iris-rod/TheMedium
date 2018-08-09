@@ -94,6 +94,11 @@ public class ItemManager : MonoBehaviour {
     Destroy(pickable);
   }
 
+  public void RemoveItemByName(string name)
+  {
+    Destroy(itens[name]);
+    itens.Remove(name);
+  }
 
   private void SetItemInCurrentScene(GameObject item)
   {

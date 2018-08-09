@@ -171,16 +171,17 @@ public class ScreenManager : MonoBehaviour
 
   }
 
-  private void FadeIn()
+  public void FadeIn()
   {
     fadeAnim.SetBool("Fade", true);
     GetComponent<CharactersManager>().FadeIn();
   }
 
-  private void FadeOut()
+  public void FadeOut()
   {
     fadeAnim.SetBool("Fade", false);
     GetComponent<CharactersManager>().FadeOut();
   }
+
 
 }

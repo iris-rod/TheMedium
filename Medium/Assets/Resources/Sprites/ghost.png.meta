@@ -1,31 +1,70 @@
 fileFormatVersion: 2
-guid: 6d7f95bf30a32ee4dbd4c32fd5e7df09
+guid: a9fd2c5955df31a4e8d74a1e7347d53b
 TextureImporter:
   fileIDToRecycleName:
     21300000: ghost_0
     21300002: ghost_1
     21300004: ghost_2
-    21300006: move_left_1
-    21300008: move_left_2
-    21300010: move_left_3
-    21300012: move_right_1
-    21300014: move_right_2
-    21300016: move_right_3
-    21300018: ghost_9
-    21300020: ghost_10
-    21300022: ghost_11
-    21300024: give_1
-    21300026: give_2
-    21300028: give_3
-    21300030: idle_right_1
-    21300032: idle_right_2
-    21300034: idle_right_3
-    21300036: idle_left_1
-    21300038: idle_left_2
-    21300040: idle_left_3
-    21300042: ghost_21
-    21300044: ghost_22
-    21300046: ghost_23
+    21300006: show_hat_1
+    21300008: show_hat_2
+    21300010: show_hat_3
+    21300012: show_hat_4
+    21300014: show_hat_5
+    21300016: show_hat_6
+    21300018: show_hat_7
+    21300020: show_hat_8
+    21300022: show_hat_9
+    21300024: ghost_12
+    21300026: ghost_13
+    21300028: ghost_14
+    21300030: show_flower_1
+    21300032: show_flower_2
+    21300034: show_flower_3
+    21300036: show_flower_4
+    21300038: show_flower_5
+    21300040: show_flower_6
+    21300042: show_flower_7
+    21300044: show_flower_8
+    21300046: show_flower_9
+    21300048: ghost_24
+    21300050: ghost_25
+    21300052: ghost_26
+    21300054: ghost_27
+    21300056: ghost_28
+    21300058: ghost_29
+    21300060: ghost_30
+    21300062: ghost_31
+    21300064: ghost_32
+    21300066: ghost_33
+    21300068: give_1
+    21300070: give_2
+    21300072: give_3
+    21300074: ghost_37
+    21300076: ghost_38
+    21300078: idle_right_1
+    21300080: idle_right_2
+    21300082: idle_right_3
+    21300084: ghost_42
+    21300086: ghost_43
+    21300088: ghost_44
+    21300090: idle_left_1
+    21300092: idle_left_2
+    21300094: idle_left_3
+    21300096: idle_flower_1
+    21300098: idle_flower_2
+    21300100: idle_flower_3
+    21300102: idle_hat_1
+    21300104: idle_hat_2
+    21300106: idle_hat_3
+    21300108: ghost_54
+    21300110: ghost_55
+    21300112: ghost_56
+    21300114: ghost_57
+    21300116: ghost_58
+    21300118: ghost_59
+    21300120: ghost_60
+    21300122: ghost_61
+    21300124: ghost_62
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,7 +110,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -122,7 +161,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f779ed11fbc20fb499607bfca8749582
+      spriteID: d480aaf5ec29b814da68ad805be48620
       vertices: []
       indices: 
       edges: []
@@ -142,7 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 261ad7e0399378841b26cb0a12935b48
+      spriteID: 6bdba26acc932c54ca56062f39e91a28
       vertices: []
       indices: 
       edges: []
@@ -162,13 +201,193 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbe02485187e33c4b900193ce2c3d65d
+      spriteID: c0cdd65d1f630394eb98edcfb08177a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_left_1
+      name: show_hat_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7544235491144054c9e3c606f591191b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a163e6b4a11d84d98bcd4f37efaf42
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7e4ca60d1c8f841a22a0f25300686e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbefa6902a3cee74e8879f314bf754d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_5
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b70ebe3f4b9bab469accd23cd3d9844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7e9fd0c211c4e449d51404975101d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8cffed23faf0147b7fc899bd09fa05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ccec1068e259b44b8ce33c6733415f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_hat_9
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47caacd9590c4b42887bff3ea328c97
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_12
       rect:
         serializedVersion: 2
         x: 0
@@ -182,13 +401,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 611b1acc6deef4443b5da9026f95bf3e
+      spriteID: 027224ef25d9bfb41b536cc33b9aa4a1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_left_2
+      name: ghost_13
       rect:
         serializedVersion: 2
         x: 32
@@ -202,13 +421,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4b06a3384320634a9adb9cc07d7eac6
+      spriteID: a6baf8888a594a2448520ca9deac4f91
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_left_3
+      name: ghost_14
       rect:
         serializedVersion: 2
         x: 64
@@ -222,13 +441,193 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61b6680521e6aa45a51b926241a2c3d
+      spriteID: f27a0e60565f2584a8d14df7aed282f7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_right_1
+      name: show_flower_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be13d30128a40e419e0339713e7dcee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7503ce987e4052c43bb198003a988d36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff88b04c78a1ef342b25a9aad00b7ee0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559893298adcad84e84ae893587caf1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_5
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c9980ac567ebd449158dcc3edfbef5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aadb19f6c958784e93b2ab0c14d60bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb0f765e76a06e4aba277b993633231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32d7501a17a7f24aa31684736d9d781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: show_flower_9
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b56b124724a1d43b4cbdeb48a28add
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_24
       rect:
         serializedVersion: 2
         x: 0
@@ -242,13 +641,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3298f45883200ab4982a3b1fd343ff42
+      spriteID: 22d957029759a004ba640cda33a9dbb3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_right_2
+      name: ghost_25
       rect:
         serializedVersion: 2
         x: 32
@@ -262,13 +661,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff9cd80e30524042a04716bc015e5f4
+      spriteID: 60fa7a838e6ef594e86c44cbc9a59c1f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move_right_3
+      name: ghost_26
       rect:
         serializedVersion: 2
         x: 64
@@ -282,13 +681,53 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f56a306b0aa54f4e83c65f97bfa2ab1
+      spriteID: 3eea5a0027afbdc42ad190694e9e1ab0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_9
+      name: ghost_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 147
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6194949e271bb76469e8973b73ccc7de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_28
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 147
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671fc44bb3ca3d14a987557819e2b345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_29
       rect:
         serializedVersion: 2
         x: 0
@@ -302,13 +741,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6fd6c580b411664b9d021da8bd46e55
+      spriteID: 9af1aa3aff0678c42abe384a0631d519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_10
+      name: ghost_30
       rect:
         serializedVersion: 2
         x: 32
@@ -322,13 +761,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3673aefd808be049a91489898ba38be
+      spriteID: 7aac9d601fb94924abe8c2416629e359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_11
+      name: ghost_31
       rect:
         serializedVersion: 2
         x: 64
@@ -342,7 +781,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0498cb8c15b3364dbe06acd844eb02c
+      spriteID: af8720ab52bf06b4793af811c676dab0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ea62250a7c2984eb7f510c71de098c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150de81aef5dd334daaf6a108d6cf7c1
       vertices: []
       indices: 
       edges: []
@@ -362,7 +841,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6525656541ae3cf4da554d5331b7e007
+      spriteID: 9c310c8c6748fae469fa906ae1394001
       vertices: []
       indices: 
       edges: []
@@ -382,7 +861,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b64fdfa667cfa34bbf1100ab24b67b7
+      spriteID: dfd6f1cb6a9e8ae42a2181a7ba5dcc80
       vertices: []
       indices: 
       edges: []
@@ -402,7 +881,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8411620f9dc31b45b9248c6e3545a07
+      spriteID: 746240430b2d8174eb750908e34cd36e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231b298ff5c6ab848949d40d6e5a5bd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3270a08026cfbb34db06df28ac7a3d19
       vertices: []
       indices: 
       edges: []
@@ -414,7 +933,7 @@ TextureImporter:
         x: 0
         y: 62
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,7 +941,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71bcb2c40afdb3b4ab1c6bd4b24ac30d
+      spriteID: dc5ca3b1722418e4da62fac5eff78086
       vertices: []
       indices: 
       edges: []
@@ -432,9 +951,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 62
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,7 +961,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd3b451b69adad346b91f1ee77ad9b62
+      spriteID: 986d8854fb00d364b9eaa81e0e6c5c51
       vertices: []
       indices: 
       edges: []
@@ -454,6 +973,26 @@ TextureImporter:
         x: 64
         y: 62
         width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5996860bf2ef41542a8bc7c6a1b89a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -462,7 +1001,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c55c9e194c9223e4085d1ce7ab1a41bb
+      spriteID: 53c8ca97b1e65f844ac065ec40b26b55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40dc1722ed322843a3bd70c20b4dc25
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7484cccb394034e877cfb07c83705a
       vertices: []
       indices: 
       edges: []
@@ -474,7 +1053,7 @@ TextureImporter:
         x: 0
         y: 27
         width: 32
-        height: 33
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,7 +1061,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7acca0dc6e158874a98305945ad58efe
+      spriteID: 73aa0efa8607b1e408c4015ed19a0754
       vertices: []
       indices: 
       edges: []
@@ -492,9 +1071,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 29
+        y: 27
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,7 +1081,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e1113dac8065b4590a87c0f514f4cd
+      spriteID: 93619e0a7d06d804f99e51d88e33f64e
       vertices: []
       indices: 
       edges: []
@@ -512,9 +1091,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 27
+        y: 26
         width: 32
-        height: 33
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,13 +1101,133 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 555ca5ebcc29947479e6bed6cb0ea383
+      spriteID: 4b3ecb08da2692249a71a13ae0f53535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_21
+      name: idle_flower_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fb2925bf8223b489445662254d7f04
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_flower_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffa5ec3116fe1b45a8ff2a2da144d8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_flower_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 31
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0b8dbb0a807bc4c9d510e2c0ab14ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_hat_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 31
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e092b5c504e3cbc45932c45c91acd4b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_hat_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 32
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6169cfc4f142d4a92f83f6b99b5106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_hat_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 31
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb3b31c5433d7249af06e4a498e0933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_54
       rect:
         serializedVersion: 2
         x: 0
@@ -542,13 +1241,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18bcb369991ae724eaeebd21d8103c57
+      spriteID: d3c18a711f65e5f4fa31398028b8556c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_22
+      name: ghost_55
       rect:
         serializedVersion: 2
         x: 32
@@ -562,13 +1261,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 832a8a086aea08943a8856ba1574947a
+      spriteID: d0512b42a2004dd43a1cb8db64d361ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_23
+      name: ghost_56
       rect:
         serializedVersion: 2
         x: 64
@@ -582,7 +1281,127 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2512b22ad571f184eb81aeaa2ac62fdb
+      spriteID: b9368cf472d9ccc48bc2be60fe3089e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_57
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a7ff54c6d3004479aaade7f1b04af5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b78c37d09ee0df429d59f1be3de1a47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b9db19e946658498303dd4dbb463cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290ef5cf208623d47a0acb1c14f19444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_61
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e22d1ce75e5d0479f04797d28b0e83
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a384ab05c39c2f42a1de82cf6eaa2df
       vertices: []
       indices: 
       edges: []
@@ -590,7 +1409,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 055a8cc4c9044b246978fca837212dc8
+    spriteID: b0483845535cb0749934e6c0ee1fe5d8
     vertices: []
     indices: 
     edges: []

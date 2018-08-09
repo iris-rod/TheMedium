@@ -47,4 +47,11 @@ public class ItemClickHandler : MonoBehaviour, IPointerClickHandler
     return selected;
   }
 
+  public void SetSelected(bool value)
+  {
+    selected = value;
+    if(!value)
+      outline.transform.GetComponent<Outline>().effectColor = Color.gray;
+  }
+
 }

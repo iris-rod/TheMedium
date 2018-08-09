@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour {
   private int maxSlots,nextOpenSlot;
 
   private bool canAddNewItem;
+  private bool clickedOnInventory;
   private string itemClicked;
   private ItemManager ItManager;
 
@@ -63,6 +64,7 @@ public class InventoryManager : MonoBehaviour {
       if (spot.GetComponent<Slot>().GetItemName().Trim().ToLower() == sleekName.Trim().ToLower())
       {
         spot.GetComponent<Slot>().RemoveItem();
+        spot.GetComponent<ItemClickHandler>().SetSelected(false);
         break;
       }
     }
@@ -96,6 +98,12 @@ public class InventoryManager : MonoBehaviour {
     }
     return false;
   }
+
+  public bool ClickedOnInventory()
+  {
+    return clickedOnInventory;
+  }
+
 
   private bool HasItem(string name)
   {
@@ -142,4 +150,18 @@ public class InventoryManager : MonoBehaviour {
     }
   }
 
+  void OnMouseDown()
+  {
+    clickedOnInventory = true;
+  }
+
+  void OnMouseUp()
+  {
+    Invoke("ResetClick",1f); 
+  }
+
+  void ResetClick()
+  {
+    clickedOnInventory = false;
+  }
 }

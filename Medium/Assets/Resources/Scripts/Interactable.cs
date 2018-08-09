@@ -67,7 +67,8 @@ public class Interactable : MonoBehaviour {
     {
       if (hasReward)
         SetReward();
-      Destroy(transform.gameObject);
+      if(name != "standing_lamp")
+        Destroy(transform.gameObject);
     }
   }
 
@@ -77,6 +78,7 @@ public class Interactable : MonoBehaviour {
     {
       ItManager.CreateItem(Reward, null);
       ItManager.GiveItem(Reward, transform.position + new Vector3(0, -60, 0));
+      InvManager.RemoveItem(ItemNeeded);
     }
     else Unlock();
     hasReward = false;

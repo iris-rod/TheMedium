@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
   //Used to switch layers when fading
   private bool hide;
   private bool moving;
-  private bool canPickup;
+  private bool canPickup, canInteract;
   private Vector3 endPoint;
   private Animator animator;
   private ScreenManager SM;
@@ -27,11 +27,12 @@ public class PlayerController : MonoBehaviour {
     animator = transform.GetComponent<Animator>();
 
     canPickup = true;
+    canInteract = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButtonDown(0) && !InvManager.ClickedOnInventory())
     {
       SetEndPosition();    
       moving = true;
@@ -100,6 +101,19 @@ public class PlayerController : MonoBehaviour {
     moving = false;
     transform.position = Vector2.MoveTowards(transform.position, col.transform.position, -1 * 10 * Time.deltaTime);
     animator.SetBool("Move", false);
+    if (col.transform.CompareTag("NPC") && canInteract)
+    {
+      animator.SetTrigger("Interact");
+      canInteract = false;
+      StartCoroutine(EndInteraction(col.gameObject, 1.5f));
+    }
+  }
+
+  IEnumerator EndInteraction(GameObject ghost, float delay)
+  {
+    yield return new WaitForSeconds(delay);
+    ghost.GetComponent<GhostController>().PlayerEndedInteractions(true);
+    canInteract = true;
   }
 
   void Pickup()

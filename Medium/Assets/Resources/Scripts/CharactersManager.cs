@@ -34,4 +34,21 @@ public class CharactersManager : MonoBehaviour {
     }
   }
 
+  public void SetCharacterFinalScene(GameObject charGO)
+  {
+    GetComponent<ScreenManager>().FadeOut();
+    StartCoroutine(FinalSceneSetUp(charGO, 1.5f));
+  }
+
+  //Create Fadeout effect, then setup the ghost final position, and then perform fadein
+  IEnumerator FinalSceneSetUp(GameObject ghost, float delay)
+{
+  yield return new WaitForSeconds(delay);
+    ghost.transform.parent = GameObject.Find("MainScene").transform;
+    if (ghost.GetComponent<GhostController>().Receives.ToLower() == "flower")
+      ghost.transform.localPosition = new Vector3(30, -10, 3);
+    else if (ghost.GetComponent<GhostController>().Receives.ToLower() == "hat")
+      ghost.transform.localPosition = new Vector3(-30, -10, 3);
+    GetComponent<ScreenManager>().FadeIn();
+  }
 }
