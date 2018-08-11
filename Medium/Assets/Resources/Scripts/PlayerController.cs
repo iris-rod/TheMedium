@@ -30,8 +30,9 @@ public class PlayerController : MonoBehaviour {
     canInteract = true;
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
+    // The player only moves to the position clicked if it wasn't on the inventory
     if (Input.GetMouseButtonDown(0) && !InvManager.ClickedOnInventory())
     {
       SetEndPosition();    
@@ -42,19 +43,20 @@ public class PlayerController : MonoBehaviour {
   }
 
 
-
+  // Sets the final position of the player, based on the position where he clicked.
   private void SetEndPosition()
   {
+    SoundManager.PlaySound("walking_default");
     var aux = Input.mousePosition;
     aux.z = 10.0f;
     endPoint = Camera.main.ScreenToWorldPoint(aux);
-    //Move left
+    //Set animation to be looking left
     if (endPoint.x < transform.position.x)
     {
       animator.SetBool("LookingLeft", true);
       animator.SetBool("LookingRight", false);
     }
-    //Move right
+    //Set animation to be looking right
     else
     {
       animator.SetBool("LookingLeft", false);
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour {
     }
   }
 
+  //Sets the animation to move and moves the character depending on its speed
   public void Move()
   {
     animator.SetBool("Move", true);
@@ -71,16 +74,20 @@ public class PlayerController : MonoBehaviour {
     {
       moving = false;
       animator.SetBool("Move", false);
+      SoundManager.StopAudio();
     }
 
   }
 
+  // Checks for collisions in the scene
   void OnCollisionStay2D(Collision2D col)
   {
+    //If it collides with a 'Button', it means it's changing rooms
     if (col.transform.CompareTag("Button"))
     {
       SM.OpenPanel();
     }
+    // If it collides with an pickable item, he picks it (if he already clicked on it)
     else if (col.transform.CompareTag("Pickable"))
     {
       if (canPickup && col.transform.GetComponent<Pickable>().CanBePicked())
@@ -91,6 +98,7 @@ public class PlayerController : MonoBehaviour {
         canPickup = false;
       }
     }
+    // If it collides with an interactable item, he can only interact if he already clicked on it
     else if (col.transform.CompareTag("Interactable"))
     {
       if (col.transform.GetComponent<Interactable>().CanInteract())
@@ -98,6 +106,7 @@ public class PlayerController : MonoBehaviour {
         col.transform.GetComponent<Interactable>().StartInteraction();
       }
     }
+    // By default, the player is pushed back when he collides with anything that has a collider, and stops moving
     moving = false;
     transform.position = Vector2.MoveTowards(transform.position, col.transform.position, -1 * 10 * Time.deltaTime);
     animator.SetBool("Move", false);
@@ -105,10 +114,19 @@ public class PlayerController : MonoBehaviour {
     {
       animator.SetTrigger("Interact");
       canInteract = false;
+      // A timer is set to indicate the end of the player animation of the interaction with a ghost
       StartCoroutine(EndInteraction(col.gameObject, 1.5f));
     }
   }
 
+  // Whenever he collides with something, the audio clip of walking should be stopped
+  void OnCollisionEnter2D(Collision2D col)
+  {
+    SoundManager.StopAudio();
+  }
+
+  // Function called used in the timer to indicate the end of the interaction with a ghost
+  // (this way the animation ghosts only starts when the animation of the player ends)
   IEnumerator EndInteraction(GameObject ghost, float delay)
   {
     yield return new WaitForSeconds(delay);
@@ -116,8 +134,10 @@ public class PlayerController : MonoBehaviour {
     canInteract = true;
   }
 
+  // Picks up an item, and it is added to the inventory and removed from the scene
   void Pickup()
   {
+    SoundManager.PlaySound("pick");
     InvManager.AddItem(itemToPick.transform.GetComponent<Pickable>());
     ItManager.RemoveItem(itemToPick.gameObject);
     canPickup = true;

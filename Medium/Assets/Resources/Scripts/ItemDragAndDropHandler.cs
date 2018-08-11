@@ -16,6 +16,7 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
     ItManager = GameObject.Find("Manager").GetComponent<ItemManager>();
   }
 
+  // When dragging the slot, it follows the mouse position
   public void OnDrag(PointerEventData eventData)
   {
     if (!GetComponent<Slot>().IsFree())
@@ -33,6 +34,7 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
     }
   }
 
+  // When he stops dragging, the slot returns to its original position
   public void OnEndDrag(PointerEventData eventData)
   {
     if (!GetComponent<Slot>().IsFree())
@@ -43,6 +45,8 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
     }
   }
 
+  // When the slot is dropped, the item is created in the scene, the slot returns to its original position, and the 
+  // item is removed from the inventory
   public void OnDrop(PointerEventData eventData)
   {
     string name = "";

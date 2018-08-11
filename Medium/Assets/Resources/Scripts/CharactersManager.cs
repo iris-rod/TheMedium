@@ -13,22 +13,32 @@ public class CharactersManager : MonoBehaviour {
     npcs = GameObject.FindGameObjectsWithTag("NPC");
 	}
 
+  // Show the player and the ghosts
+  // Place the ghosts on the layer above the scene, and change the alpha of the player to 1
   public void FadeIn()
   {
     if (player != null)
     {
       GetComponent<ChangeSceneHandler>().ChangeScene();
-      player.GetComponent<SpriteRenderer>().sortingOrder = 1;
-      
+
+      Color c = player.GetComponent<SpriteRenderer>().color;
+      c.a = 1;
+      player.GetComponent<SpriteRenderer>().color = c;
+
       for (int i = 0; i < npcs.Length; i++)
         npcs[i].GetComponent<SpriteRenderer>().sortingOrder = 1;
     }
   }
+
+  // Hide the player and the ghosts
+  // Place the ghosts on a layer bellow the scenes and change the alpha of the player to 0
   public void FadeOut()
   {
     if (player != null)
     {
-      player.GetComponent<SpriteRenderer>().sortingOrder = 0;
+      Color c = player.GetComponent<SpriteRenderer>().color;
+      c.a = 0;
+      player.GetComponent<SpriteRenderer>().color = c;
       for (int i = 0; i < npcs.Length; i++)
         npcs[i].GetComponent<SpriteRenderer>().sortingOrder = 0;
     }
@@ -40,7 +50,7 @@ public class CharactersManager : MonoBehaviour {
     StartCoroutine(FinalSceneSetUp(charGO, 1.5f));
   }
 
-  //Create Fadeout effect, then setup the ghost final position, and then perform fadein
+  //Create Fadeout effect in the current scene, then setup the ghost final position, and then perform fadein
   IEnumerator FinalSceneSetUp(GameObject ghost, float delay)
 {
   yield return new WaitForSeconds(delay);

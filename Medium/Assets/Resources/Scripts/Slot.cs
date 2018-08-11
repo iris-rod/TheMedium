@@ -20,12 +20,14 @@ public class Slot : MonoBehaviour {
     itemQuantity = 0;
   }
 
+  // Updates the quantity and the item placed on the slot
   public void UpdateItem(int quantity)
   {
     itemQuantity += quantity;
     quantityText.text = itemQuantity.ToString();
   }
 
+  // Add new item to the slot
   public void AddItem(string name, int quantity, Sprite icon)
   {
     itemName = name;
@@ -35,6 +37,7 @@ public class Slot : MonoBehaviour {
     hasItem = true;
   }
 
+  // Remove item from the slot
   public void RemoveItem()
   {
     itemName = "";
@@ -44,7 +47,7 @@ public class Slot : MonoBehaviour {
     hasItem = false;
   }
   
-
+  // Checks if the slot as an item or not
   public bool IsFree()
   {
     return !hasItem;

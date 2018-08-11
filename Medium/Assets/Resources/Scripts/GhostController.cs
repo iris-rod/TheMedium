@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GhostController : MonoBehaviour {
-
+  // The item that the ghost gives
   public string Item;
   public bool Male;
+  // The item that he must receive in the end
   public string Receives;
 
   private Sprite inventoryIcon;
@@ -17,8 +18,7 @@ public class GhostController : MonoBehaviour {
   private CharactersManager CharManager;
   private Animator anim;
   private bool show, endShow, playerEndedInteraction;
-
-  // Use this for initialization
+  
   void Start()
   {
     anim = GetComponent<Animator>();
@@ -41,6 +41,7 @@ public class GhostController : MonoBehaviour {
 
   void Update()
   {
+    // If the player has ended his animation, the initial animation of the ghost is played (showing what he wants to give to the other one)
     if(show && playerEndedInteraction)
     {
       anim.SetBool("Show", true);
@@ -49,6 +50,7 @@ public class GhostController : MonoBehaviour {
       playerEndedInteraction = false;
       Invoke("ResetShow", 1.2f);
     }
+    // If the player has ended his animation, the ghost gives his initial item to the player or he receives his final item
     else if(interact && playerEndedInteraction)
     {
       if (canInteract)
@@ -77,12 +79,14 @@ public class GhostController : MonoBehaviour {
     playerEndedInteraction = false;
   }
 
+  //When he receives the item, it is removed from the scene
   private void ReceiveItem()
   {
     ItM.RemoveItemByName(Receives + "_after");
     Invoke("SetCharacter",1);
   }
 
+  // Places the ghost in its final position
   void SetCharacter()
   {
     CharManager.SetCharacterFinalScene(transform.gameObject);

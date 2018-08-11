@@ -10,6 +10,7 @@ public class Pickable : MonoBehaviour {
 
   private bool canBePicked = false;
 
+  // Set the name, quantity and inventory icon of the pickable item
   public void Setup(string name, int value, Sprite icon)
   {
     Name = name;
@@ -17,11 +18,13 @@ public class Pickable : MonoBehaviour {
     InventoryIcon = icon;
   }
 
+  // Used in the onClick listener - sets the item to be pickable
   public void Clicked()
   {
     canBePicked = true;
   }
 
+  // Returns the bool that says if it is pickable
   public bool CanBePicked()
   {
     return canBePicked;

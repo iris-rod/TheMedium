@@ -34,6 +34,8 @@ public class ScreenManager : MonoBehaviour
 
   public void OnEnable()
   {
+    SoundManager.SetUp();
+    Screen.orientation = ScreenOrientation.LandscapeLeft;
     FadeIn();
     //We cache the Hash to the "Open" Parameter, so we can feed to Animator.SetBool.
     OpenParameterId = Animator.StringToHash(OpenTransitionName);
@@ -171,12 +173,14 @@ public class ScreenManager : MonoBehaviour
 
   }
 
+  //Start the animation of fade in
   public void FadeIn()
   {
     fadeAnim.SetBool("Fade", true);
     GetComponent<CharactersManager>().FadeIn();
   }
 
+  //Start the animation of fade out
   public void FadeOut()
   {
     fadeAnim.SetBool("Fade", false);

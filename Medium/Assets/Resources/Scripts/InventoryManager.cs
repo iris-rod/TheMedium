@@ -30,6 +30,8 @@ public class InventoryManager : MonoBehaviour {
     canAddNewItem = true;
   }
 
+  // Add item to the inventory - if it already exists its quantity is updated, if it doesnt it is added
+  // When the item is added, the index of the next slot open is updated
   public void AddItem(Pickable item)
   {
     if (canAddNewItem && item.Name == itemClicked)
@@ -53,6 +55,7 @@ public class InventoryManager : MonoBehaviour {
     }
   }
 
+  // Remove item from the inventory
   public void RemoveItem(string name)
   {
     string sleekName = name.Split('(')[0].Trim();
@@ -104,7 +107,7 @@ public class InventoryManager : MonoBehaviour {
     return clickedOnInventory;
   }
 
-
+  // Check if the item is in the inventory
   private bool HasItem(string name)
   {
     foreach(var item in items)
@@ -115,6 +118,7 @@ public class InventoryManager : MonoBehaviour {
     return false;
   }
   
+  // Add item to the next open slot
   private void AddItemToSlot(string name, int quantity, Sprite icon)
   {
     Transform spots = transform.GetChild(0);
@@ -122,6 +126,7 @@ public class InventoryManager : MonoBehaviour {
     spot.GetComponent<Slot>().AddItem(name, quantity, icon);
   }
 
+  // Update the quantity of the item on the slot
   private void UpdateItemOnSlot(string name, int quantity)
   {
     Transform spots = transform.GetChild(0);
@@ -136,6 +141,7 @@ public class InventoryManager : MonoBehaviour {
     }
   }
 
+  // Gets the index of the next open slot
   private void CheckNextOpenSlot()
   {
     Transform spots = transform.GetChild(0);

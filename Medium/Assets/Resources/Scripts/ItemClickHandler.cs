@@ -16,6 +16,7 @@ public class ItemClickHandler : MonoBehaviour, IPointerClickHandler
     outline = transform.parent.gameObject;
   }
 
+  // Check if the player clicked on the inventory - selects the item in the inventory to be used
   public void OnPointerClick(PointerEventData eventData)
   {
     if (!GetComponent<ItemDragAndDropHandler>().IsDragging())

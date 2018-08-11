@@ -14,12 +14,13 @@ public class ItemManager : MonoBehaviour {
 
   private Sprite[] sprites;
 
-  // Use this for initialization
+  
   void Start () {
     itens = new Dictionary<string, GameObject>();
     InvManager = GameObject.Find("Inventory").GetComponent<InventoryManager>();
     sprites = Resources.LoadAll<Sprite>("Sprites/items");
 
+    //Add to the lists the objects already in the scenes
     GameObject[] interactables = GameObject.FindGameObjectsWithTag("Interactable");
     GameObject[] pickables = GameObject.FindGameObjectsWithTag("Pickable");
 
@@ -37,6 +38,7 @@ public class ItemManager : MonoBehaviour {
     return null;
   }
 
+  // Create a new item to be put on the scene
   public void CreateItem(string name, GameObject scene)
   {
     Sprite icon = null;
@@ -76,6 +78,7 @@ public class ItemManager : MonoBehaviour {
     itens.Add(name, itemGO);
   }
 
+  // Function used when the player or the ghost gives an item
   public void GiveItem(string name, Vector3 position)
   {
     GameObject item = itens[name];
@@ -83,33 +86,39 @@ public class ItemManager : MonoBehaviour {
     item.transform.position = position;
   }
 
+  
   public void SetCurrentScene(GameObject go)
   {
     currentScene = go;
   }
 
+  // Remove item from the scene
   public void RemoveItem(GameObject pickable)
   {
     itens.Remove(pickable.GetComponent<Pickable>().Name);
     Destroy(pickable);
   }
 
+  // Remove item from the scene by giving its name
   public void RemoveItemByName(string name)
   {
     Destroy(itens[name]);
     itens.Remove(name);
   }
 
+  // Sets the item in the current open scene
   private void SetItemInCurrentScene(GameObject item)
   {
     item.transform.parent = currentScene.transform;
   }
 
+  // Sets the item in a specfici scene (it may not be open)
   private void SetItemInSpecificScene(GameObject item, GameObject scene)
   {
     item.transform.parent = scene.transform;
   }
 
+  // Add item to the list
   private void AddItems(GameObject[] newEntries)
   {
     for(int i = 0; i< newEntries.Length; i++)

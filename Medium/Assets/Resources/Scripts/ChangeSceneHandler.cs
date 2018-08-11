@@ -22,7 +22,7 @@ public class ChangeSceneHandler : MonoBehaviour {
     buttonPressed = button.name.Substring(6);
   }
 
-
+  // Whenever the player changes scenes, it is placed in the correct position to indicate where he came from (up -> down, left -> right, ...)
   public void ChangeScene()
   {
     if (buttonPressed != "" && buttonPressed != null)
@@ -30,16 +30,16 @@ public class ChangeSceneHandler : MonoBehaviour {
       switch (buttonPressed.ToLower())
       {
         case "left":
-          player.transform.position = new Vector3(285, -15, 3);
+          player.transform.position = new Vector3(670, 160, 3);
           break;
         case "right":
-          player.transform.position = new Vector3(-265, -15, 3);
+          player.transform.position = new Vector3(185, 160, 3);
           break;
         case "up":
-          player.transform.position = new Vector3(4, -70, 3);
+          player.transform.position = new Vector3(427, 80, 3);
           break;
         case "down":
-          player.transform.position = new Vector3(4, 60, 3);
+          player.transform.position = new Vector3(427, 250, 3);
           break;
       }
     }
